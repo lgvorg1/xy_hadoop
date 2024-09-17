@@ -118,8 +118,6 @@ jobs:
       - name: Download Xygeni Scanner 
         run: |
           echo Downloading Xygeni Scanner ....
-          echo ${{ env.XY_PRJ_NAME }}
-          exit 1
 
           #curl -L https://get.xygeni.io/latest/scanner/install.sh | /bin/bash -s -- -u $XY_USERNAME -p $XY_PASSWORD -s $XY_URL -d ${GITHUB_WORKSPACE}/scanner 
           curl -L https://get.xygeni.io/latest/scanner/install.sh | /bin/bash -s -- -u $XY_USERNAME -p $XY_PASSWORD -s $XY_URL -d ${GITHUB_WORKSPACE}/scanner 
