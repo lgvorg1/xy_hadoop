@@ -20,5 +20,3 @@ jobs:
         with:
           xygeni_url: https://apidemo.xygeni.io/deps-doctor-service
           token: ${{ secrets.XYGENI_TOKEN }}
-          gh_token: ${{ secrets.GH_PAT }}
-          command: scan --never-fail --skip="malware" -n ${{ github.repository }} -e **/scanner/**
