@@ -117,14 +117,17 @@ jobs:
         run: |
           echo Downloading Xygeni Scanner ....
 
-          curl -L https://get.xygeni.io/latest/scanner/install.sh | /bin/bash -s -- -t $XY_TOKEN -s $XY_URL -d ${GITHUB_WORKSPACE}/scanner 
+          #curl -L https://get.xygeni.io/latest/scanner/install.sh | /bin/bash -s -- -t "$XY_TOKEN" -s $XY_URL -d ${GITHUB_WORKSPACE}/scanner 
           #curl -L https://get.xygeni.io/latest/scanner/install.sh | /bin/bash -s -- -u $XY_USERNAME -p $XY_PASSWORD -s $XY_URL -d ${GITHUB_WORKSPACE}/scanner 
-          
+          curl -sLO https://get.xygeni.io/latest/scanner/install.sh
+          chmod +x install.sh
+          ./install.sh -o -v -t "$XY_TOKEN" -d ${GITHUB_WORKSPACE}/scanner
+            
           cat ${GITHUB_WORKSPACE}/scanner/conf/codetampering/ccm/workflow_modification.yml | grep changeTypesToConsider
           sed -i 's/changeTypesToConsider: M/changeTypesToConsider: AM/g' ${GITHUB_WORKSPACE}/scanner/conf/codetampering/ccm/workflow_modification.yml
           cat ${GITHUB_WORKSPACE}/scanner/conf/codetampering/ccm/workflow_modification.yml | grep changeTypesToConsider
-        env:
-          API_KEY: ${{ secrets.XY_TOKEN_PRO_TRIAL }}
+        #env:
+        #  API_KEY: ${{ secrets.XY_TOKEN_PRO_TRIAL }}
           
           
       # Runs a set of commands using the runners shell
