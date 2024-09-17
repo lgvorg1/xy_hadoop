@@ -21,7 +21,6 @@ on:
           - PRO_TRIAL
           - DEMO
           - DEMO_TRIAL
-          - PARTNERS
           default: PRO
  
 env:
@@ -51,18 +50,21 @@ jobs:
               echo XY_USERNAME=${{ secrets.XY_USERNAME_PRO }} >> $GITHUB_ENV
               echo XY_PASSWORD=${{ secrets.XY_PASSWORD_PRO }} >> $GITHUB_ENV
               echo XY_URL=${{ secrets.XY_URL_PRO }} >> $GITHUB_ENV
+              echo XY_TOKEN=${{ secrets.XY_TOKEN_PRO }} >> $GITHUB_ENV 
               ;;
             PRO_TRIAL)
               echo "PRO_TRIAL"
               echo XY_USERNAME=${{ secrets.XY_USERNAME_PRO_TRIAL }} >> $GITHUB_ENV
               echo XY_PASSWORD=${{ secrets.XY_PASSWORD_PRO_TRIAL }} >> $GITHUB_ENV
               echo XY_URL=${{ secrets.XY_URL_PRO_TRIAL }} >> $GITHUB_ENV
+              echo XY_TOKEN=${{ secrets.XY_TOKEN_PRO_TRIAL }} >> $GITHUB_ENV 
               ;;
             DEMO)
               echo "DEMO"
               echo XY_USERNAME=${{ secrets.XY_USERNAME_DEMO }} >> $GITHUB_ENV
               echo XY_PASSWORD=${{ secrets.XY_PASSWORD_DEMO }} >> $GITHUB_ENV
               echo XY_URL=${{ secrets.XY_URL_DEMO }} >> $GITHUB_ENV
+              echo XY_TOKEN=${{ secrets.XY_TOKEN_DEMO }} >> $GITHUB_ENV            
               ;;
             DEMO_TRIAL)
               echo "DEMO_TRIAL"
@@ -71,17 +73,12 @@ jobs:
               echo XY_URL=${{ secrets.XY_URL_DEMO_TRIAL }} >> $GITHUB_ENV
               echo XY_TOKEN=${{ secrets.XY_TOKEN_DEMO_TRIAL }} >> $GITHUB_ENV
               ;;
-            PARTNERS)
-              echo "PARTNERS"
-              echo XY_USERNAME=${{ secrets.XY_USERNAME_PARTNERS }} >> $GITHUB_ENV
-              echo XY_PASSWORD=${{ secrets.XY_PASSWORD_PARTNERS }} >> $GITHUB_ENV
-              echo XY_URL=${{ secrets.XY_URL_PARTNERS }} >> $GITHUB_ENV
-              ;;
             *)
               echo "DEFAULT (PRO)"
               echo XY_USERNAME=${{ secrets.XY_USERNAME_PRO }} >> $GITHUB_ENV
               echo XY_PASSWORD=${{ secrets.XY_PASSWORD_PRO }} >> $GITHUB_ENV
               echo XY_URL=${{ secrets.XY_URL_PRO }} >> $GITHUB_ENV
+              echo XY_TOKEN=${{ secrets.XY_TOKEN_PRO }} >> $GITHUB_ENV 
               ;;
           esac
 
