@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions 
 
-name: Xygeni CI/CD Security Scan (strict)
+name: Xygeni CI/CD Security Scan (standard)
 
 # Controls when the workflow will run
 on:
