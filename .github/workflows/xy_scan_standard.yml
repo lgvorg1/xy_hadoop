@@ -26,7 +26,7 @@ on:
 env:
   
   XY_ENV: ${{ github.event_name == 'push' && 'PRO' || github.event.inputs.xy-env }}
-  XY_PRJ_NAME: github_${{ github.event.repository.name }}_$XY_ENV_standard
+  XY_PRJ_NAME: github_${{ github.event.repository.name }}_${XY_ENV}_standard
 
 
 jobs:
