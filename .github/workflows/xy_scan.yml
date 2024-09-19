@@ -136,7 +136,7 @@ jobs:
           echo Executing Xygeni scan ....    
           #--no-conf-download  malware
           #${GITHUB_WORKSPACE}/scanner/xygeni scan  --never-fail  -f json -o reports/my_project --include-collaborators --run="inventory,misconf,codetamper,deps,suspectdeps,secrets,compliance,iac" -n ${{ env.XY_PRJ_NAME }} --dir ${GITHUB_WORKSPACE} -e **/scanner/**,**/repos/**,**/path_to_xyware.goat/malicious/java/**
-          ${GITHUB_WORKSPACE}/scanner/xygeni scan  --never-fail  --include-collaborators --run="inventory,misconf,codetamper,deps,suspectdeps,secrets,compliance,iac" -n ${{ env.XY_PRJ_NAME }} --dir ${GITHUB_WORKSPACE} -e **/scanner/**,**/repos/**,**/path_to_xyware.goat/malicious/java/**
+          ${GITHUB_WORKSPACE}/scanner/xygeni scan  --never-fail  --include-collaborators --run="inventory,misconf,codetamper,deps,suspectdeps,secrets,compliance,iac" -n ${{ env.XY_PRJ_NAME }} --dir ${GITHUB_WORKSPACE} -e "*/scanner/**,**/repos/**,**/path_to_xyware.goat/malicious/java/**,**/.github/workflows/semgrep.yml,**/reports/**,xygeni_demo_trial.sh,xygeni_pro_trial.sh,snyk.sh"
         env:
           GITHUB_PAT: ${{ secrets.GH_PAT }}
 
